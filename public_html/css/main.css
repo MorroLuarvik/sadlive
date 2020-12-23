@@ -15,7 +15,7 @@ body {
 #screen {
     display: block; 
     margin: 0 auto; 
-    width: 256px; 
+    width: 256px;
     image-rendering: pixelated;
 }
 
