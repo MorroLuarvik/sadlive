@@ -1,0 +1,28 @@
+html {
+    background-color: black;
+    color: white;
+}
+
+body {
+    margin: 0;
+}
+
+#background {
+    background-color: gray;
+    padding: 20px 0;
+}
+
+#screen {
+    display: block; 
+    margin: 0 auto; 
+    width: 256px; 
+    image-rendering: pixelated;
+}
+
+.test-div {
+    margin: 10px auto;
+    border: 1px solid white;
+    width: 256px;
+    height: 192px;
+    background-color: gray;
+}
