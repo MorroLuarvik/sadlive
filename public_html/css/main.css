@@ -1,3 +1,10 @@
+@font-face {
+	font-family: 'zx';
+	src: url('/res/fonts/zx.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
 html {
     background-color: black;
     color: white;
@@ -5,6 +12,7 @@ html {
 
 body {
     margin: 0;
+    min-width: 100%;
 }
 
 #background {
@@ -20,6 +28,8 @@ body {
 }
 
 .test-div {
+    font-family: 'zx', Arial, Verdana, sans-serif;
+    font-size: 16px;
     margin: 10px auto;
     border: 1px solid white;
     width: 256px;
