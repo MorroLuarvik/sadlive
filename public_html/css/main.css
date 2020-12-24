@@ -40,10 +40,11 @@ body {
 }
 
 .left-control, .right-control {
-    height: 192px;
+    height: calc(192px - 16px - 2px);
     border: 1px solid white;
+    background-color: black;
 
-    margin: 20px;
+    margin: 0 20px;
     padding: 8px;
 }
 
@@ -55,6 +56,7 @@ body {
     #low-control-div {
         display: none;
     }
+
 }
 
 @media screen and (orientation: portrait) {
@@ -62,5 +64,9 @@ body {
     #background .left-control, 
     #background .right-control {
         display: none;
+    }
+    
+    .left-control, .right-control {
+        margin: 20px;
     }
 }
