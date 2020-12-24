@@ -6,8 +6,11 @@
 }
 
 html {
-    background-color: black;
+    font-family: 'zx', Arial, Verdana, sans-serif;
+    font-size: 16px;
+
     color: white;
+    background-color: black;
 }
 
 body {
@@ -17,21 +20,47 @@ body {
 #background {
     background-color: gray;
     padding: 20px 0;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #screen {
     display: block; 
-    margin: 0 auto; 
     width: 256px;
+    height: 192px;
     image-rendering: pixelated;
 }
 
-.test-div {
-    font-family: 'zx', Arial, Verdana, sans-serif;
-    font-size: 16px;
-    margin: 10px auto;
-    border: 1px solid white;
-    width: 256px;
+#low-control-div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-control, .right-control {
     height: 192px;
-    background-color: gray;
+    border: 1px solid white;
+
+    margin: 20px;
+    padding: 8px;
+}
+
+@media screen and (orientation: landscape) {
+    #background {
+        justify-content: space-between;
+    }
+
+    #low-control-div {
+        display: none;
+    }
+}
+
+@media screen and (orientation: portrait) {
+
+    #background .left-control, 
+    #background .right-control {
+        display: none;
+    }
 }
