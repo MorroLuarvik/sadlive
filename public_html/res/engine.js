@@ -11,8 +11,8 @@ window.onload = function() {
 		document.getElementById("debug-area").classList.add("desktop");
 
 		//document.getElementById("debug-area").addEventListener("click", putPixel);
-		timerId = setInterval(putRandomPixel, 200);
 	};
+	timerId = setInterval(putRandomPixel, 200);
 }
 
 function putRandomPixel() {
@@ -37,7 +37,6 @@ function putRandomPixel() {
 
 	ctx.putImageData(pixel, Math.random() * canvas.width | 0, Math.random() * canvas.height | 0);
 
-	//console.log(pixelData);
 }
 
 console.log('finish engine.js');
