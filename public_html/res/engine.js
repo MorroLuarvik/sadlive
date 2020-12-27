@@ -10,32 +10,39 @@ window.onload = function() {
 		document.getElementById("low-control-div").classList.add("desktop");
 		document.getElementById("debug-area").classList.add("desktop");
 
-		//document.getElementById("debug-area").addEventListener("click", putPixel);
+		document.getElementById("debug-area").addEventListener("click", plotMark);
 	};
 	timerId = setInterval(putRandomPixel, 200);
 }
 
+function plotMark() {
+	putPixel(159, 119);
+	//putPixel(159, 119);
+}
+
 function putRandomPixel() {
+	var canvas = document.getElementById("screen");
+
+	putPixel( 
+		Math.random() * canvas.width | 0, 
+		Math.random() * canvas.height | 0, 
+		new Uint8ClampedArray([Math.random() * 256 | 0, Math.random() * 256 | 0, Math.random() * 256 | 0, 255])
+	);
+
+}
+
+function putPixel(x, y, color) {
+
+	if (color === undefined)
+		color = new Uint8ClampedArray([255, 255, 255, 255]);
+
 	var canvas = document.getElementById("screen");
 	var ctx = canvas.getContext("2d");
 	
 	var pixel = ctx.createImageData(1, 1);
-	var pixelData = pixel.data;
 	
-	/*pixelData = [
-		Math.random() * 256 | 0,
-		Math.random() * 256 | 0,
-		Math.random() * 256 | 0,
-		255];*/
-	
-	//pixelData = [100, 100, 100, 255];
-	
-	pixelData[0] = Math.random() * 256 | 0;
-	pixelData[1] = Math.random() * 256 | 0;
-	pixelData[2] = Math.random() * 256 | 0;
-	pixelData[3] = 255;
-
-	ctx.putImageData(pixel, Math.random() * canvas.width | 0, Math.random() * canvas.height | 0);
+	pixel.data.set(color);
+	ctx.putImageData(pixel, x | 0, y | 0);
 
 }
 
