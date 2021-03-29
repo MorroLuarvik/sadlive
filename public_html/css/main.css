@@ -217,7 +217,7 @@ body {
     left: 15px;
     bottom: 2px;
 
-    animation: shake 0.82s;
+    animation: shake 0.82s, pause 10s;
 
     animation-iteration-count: infinite;
 }
@@ -238,4 +238,11 @@ body {
     40%, 60% {
       transform: translate3d(4px, 0, 0);
     }
+  }
+
+  @keyframes pause {
+    10%, 90% {
+        transform: translate3d(0, 0, 0);
+      }
+  
   }
