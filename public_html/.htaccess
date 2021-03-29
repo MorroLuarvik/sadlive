@@ -1,5 +1,5 @@
 RewriteEngine On
 
-Redirect 301 /test.html http://ya.ru/
+#Redirect 301 /test.html http://ya.ru/
 
 ErrorDocument 404 http://sadlive/test.html
